@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dark: #0b2e13;
+            --dark2: #061a0c;
+            --orange: #ff8c00;
+            --white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Poppins, sans-serif;
+        }
+
+        body {
+            background: var(--dark);
+            color: var(--white);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            padding-top: 80px;
+            margin: 0;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+            background: var(--orange);
+            z-index: 999;
+        }
+
+        nav .logo {
+            font-weight: 700;
+            font-size: 22px;
+            color: var(--white);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--white);
+            font-weight: 500;
+        }
+
+        nav ul li a:hover {
+            opacity: .75;
+        }
+
+        .header {
+            text-align: center;
+            padding: 50px 20px 20px;
+        }
+
+        .header h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+            color: var(--white);
+        }
+
+        .header p {
+            color: #d1d5db;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px 60px 60px;
+        }
+
+        .card {
+            position: relative;
+            width: 100%;
+            padding-top: 60%;
+            background-size: cover;
+            background-position: center;
+            border-radius: 18px;
+            overflow: hidden;
+            cursor: pointer;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 2px solid transparent;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: var(--orange);
+        }
+
+        .card h3 {
+            width: 100%;
+            background: rgba(6, 26, 12, 0.7);
+            margin: 0;
+            padding: 10px 0;
+            color: var(--white);
+            font-size: 16px;
+            text-align: center;
+        }
+
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(6, 26, 12, 0.95);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 85%;
+            border-radius: 14px;
+            border: 4px solid var(--orange);
+        }
+
+        .close {
+            position: absolute;
+            top: 25px;
+            right: 35px;
+            font-size: 40px;
+            color: var(--white);
+            cursor: pointer;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: var(--dark2);
+            color: #cbd5e1;
+            border-top: 3px solid var(--orange);
+            margin-top: auto;
+        }
+
+        @media screen and (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .card {
+                padding-top: 50%;
+            }
+
+            .gallery {
+                padding: 20px 20px 40px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">ACADEME THE PULILAN</div>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about1.html">About</a></li>
+            <li><a href="gallery1.html">Gallery</a></li>
+            <li><a href="https://www.adpi.school/">News</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="header">
+        <h1>Image Gallery</h1>
+        <p>Our Journey from Events and Activities</p>
+    </section>
+
+    <section class="gallery">
+        <div class="card" style="background-image: url('1.jpg');" onclick="openImg('1.jpg')">
+            <h3>Recognition [Ysaac]</h3>
+        </div>
+        <div class="card" style="background-image: url('2.jpg');" onclick="openImg('2.jpg')">
+            <h3>Senior Night [Rain]</h3>
+        </div>
+        <div class="card" style="background-image: url('3.jpg');" onclick="openImg('3.jpg')">
+            <h3>Dance Sport [Ysaac]</h3>
+        </div>
+        <div class="card" style="background-image: url('4.jpg');" onclick="openImg('4.jpg')">
+            <h3>Retreat [Rain]</h3>
+        </div>
+        <div class="card" style="background-image: url('5.jpg');" onclick="openImg('5.jpg')">
+            <h3>Activity in Retreat [Rain]</h3>
+        </div>
+        <div class="card" style="background-image: url('7.jpg');" onclick="openImg('7.jpg')">
+            <h3>Before Going Home During Retreat [Rain]</h3>
+        </div>
+        <div class="card" style="background-image: url('8.jpg');" onclick="openImg('8.jpg')">
+            <h3>Dance Sport [Ysaac]</h3>
+        </div>
+        <div class="card" style="background-image: url('9.jpg');" onclick="openImg('9.jpg')">
+            <h3>Work Immersion [Rain]</h3>
+        </div>
+        <div class="card" style="background-image: url('10.jpg');" onclick="openImg('10.jpg')">
+            <h3>During Recognition [Ysaac]</h3>
+        </div>
+        <div class="card" style="background-image: url('11.jpg');" onclick="openImg('11.jpg')">
+            <h3>Intrams [Rain]</h3>
+        </div>
+        <div class="card" style="background-image: url('12.jpg');" onclick="openImg('12.jpg')">
+            <h3>Grade 11 Title Defense [Jeco]</h3>
+        </div>
+        <div class="card" style="background-image: url('13.jpg');" onclick="openImg('13.jpg')">
+            <h3>Teacher's Day [Jeco]</h3>
+        </div>
+        <div class="card" style="background-image: url('14.jpg');" onclick="openImg('14.jpg')">
+            <h3>Foundation Day Fun Run [Rhonjay/Fiel]</h3>
+        </div>
+        <div class="card" style="background-image: url('15.jpg');" onclick="openImg('15.jpg')">
+            <h3>Retreat [Jeco]</h3>
+        </div>
+        <div class="card" style="background-image: url('16.jpg');" onclick="openImg('16.jpg')">
+            <h3>Inspection Day [Rhonjay/Fiel]</h3>
+        </div>
+        <div class="card" style="background-image: url('17.jpg');" onclick="openImg('17.jpg')">
+            <h3>Food Bazaar [Jeco]</h3>
+        </div>
+        <div class="card" style="background-image: url('18.jpg');" onclick="openImg('18.jpg')">
+            <h3>Recognition Day Grade 11 [Jeco]</h3>
+        </div>
+        <div class="card" style="background-image: url('19.jpg');" onclick="openImg('19.jpg')">
+            <h3>Year End Party Grade 12 [Rhonjay/Fiel]</h3>
+        </div>
+        <div class="card" style="background-image: url('20.jpg');" onclick="openImg('20.jpg')">
+            <h3>Research Final Defense Grade 12 [Jeco]</h3>
+        </div>
+    </section>
+
+    <div class="lightbox" id="lightbox" onclick="closeImg()">
+        <span class="close">&times;</span>
+        <img id="lightbox-img">
+    </div>
+
+    <footer>
+        © 2026 Academe The Pulilan — All Rights Reserved
+    </footer>
+
+    <script>
+        function openImg(src) {
+            const lightbox = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            lightbox.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeImg() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dark: #0b2e13;
+            --dark2: #061a0c;
+            --orange: #ff8c00;
+            --white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Poppins, sans-serif;
+        }
+
+        body {
+            background: var(--dark);
+            color: var(--white);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+            background: var(--orange);
+            z-index: 10;
+        }
+
+        nav .logo {
+            font-weight: 700;
+            font-size: 22px;
+            color: white;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+        }
+
+        nav ul li a:hover {
+            opacity: .75;
+        }
+
+        .header {
+            text-align: center;
+            padding: 70px 20px 40px;
+        }
+
+        .header h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .header p {
+            color: #d1d5db;
+        }
+
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 50px;
+            padding: 40px 60px 80px;
+        }
+
+        .contact-image,
+        .contact-info {
+            background: var(--dark2);
+            border-radius: 18px;
+            padding: 30px;
+            flex: 1 1 350px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, .5);
+        }
+
+        .contact-image img {
+            width: 100%;
+            border-radius: 18px;
+            display: block;
+        }
+
+        .contact-info h2 {
+            margin-bottom: 20px;
+            color: var(--orange);
+        }
+
+        .contact-info a {
+            color: var(--orange);
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-info p {
+            margin-bottom: 12px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #041408;
+            color: #cbd5e1;
+            border-top: 3px solid var(--orange);
+            margin-top: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">ACADEME THE PULILAN</div>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about1.html">About</a></li>
+            <li><a href="gallery1.html">Gallery</a></li>
+            <li><a href="https://www.adpi.school/">News</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="header">
+        <h1>Contact Us</h1>
+        <p>Check out our Facebook Profiles</p>
+    </section>
+
+    <section class="contact-container">
+        <div class="contact-image">
+            <img src="adp.jpg" alt="Contact Banner">
+        </div>
+
+        <div class="contact-info">
+            <h2>Our Facebook Profiles</h2>
+            <p><strong>Rain Dela Cruz:</strong> <a href="https://www.facebook.com/rain.delacruz.395" target="_blank">facebook.com/rain.delacruz</a></p>
+            <p><strong>Ysaac Xander Nerida:</strong> <a href="https://www.facebook.com/ysaac.nerida" target="_blank">facebook.com/ysaac.nerida</a></p>
+            <p><strong>Justin Fiel Perez:</strong> <a href="https://www.facebook.com/fielyjustin1" target="_blank">facebook.com/justin.perez</a></p>
+            <p><strong>Rhonjay Reyes:</strong> <a href="https://www.facebook.com/rhon.jay.5623" target="_blank">facebook.com/rhonjay.reyes</a></p>
+            <p><strong>Jerico Sanguenza:</strong> <a href="https://www.facebook.com/je.co.981580" target="_blank">facebook.com/jerico.sanguenza</a></p>
+
+        </div>
+    </section>
+
+    <footer>
+        © 2026 Academe The Pulilan — All Rights Reserved
+    </footer>
+
+</body>
+
+</html>
